@@ -1,0 +1,75 @@
+version: '3'
+services:
+    toolbox:
+        image: kaizzhang/dstoolbox
+        environment:
+            - DISPLAY=192.168.0.8:0
+
+
+    rstudio:
+        image: rocker/rstudio
+        volumes:
+            - .:/rstudio
+        ports:
+            - 8787:8787
+        environment:
+            - DISABLE_AUTH=true
+
+    spyder:
+        image: compdatasci/spyder-desktop
+        ports:
+            - 6080:6080
+            - 5900:5900
+        environment:
+            - VNC_PW=pass
+
+    jupyter:
+        image: "jupyter/base-notebook"
+        volumes:
+            - .:/jupyter
+        ports:
+            - 8888:8888
+        environment:
+            - JUPYTER_TOKEN=easy
+
+    orange:
+        image: acopar/orange-docker
+        ports:
+            - 6901:6901
+    
+    vs-code:
+        image: ghcr.io/linuxserver/code-server
+        container_name: code-server
+        environment:
+            - PASSWORD=pass
+        volumes:
+            - .:/vs-code
+        ports:
+            - 8443:8443
+        restart: unless-stopped
+
+    pyspark:
+        image: jupyter/pyspark-notebook
+        volumes:
+            - .:/pyspark
+        ports:
+            - 8999:8888
+        environment:
+            - JUPYTER_TOKEN=easy
+
+    tensorflow:
+        image: tensorflow/tensorflow:latest-jupyter
+        volumes:
+            - .:/tensorflow
+        ports:
+            - 8989:8888
+        environment:
+            - JUPYTER_TOKEN=easy
+
+    markdown:
+        image: v4tech/markdown-editor
+        volumes:
+            - .:/markdown
+        ports:
+            - 4000:80
+
