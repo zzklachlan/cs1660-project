@@ -12,6 +12,11 @@
 
 * Docker installed
 * socat installed to build a connection between the docker container and xQuartz on the host machine
+* In ***docker-compose.yml*** update the DISPLAY environment variable to ***{your IP address}:0***
+    > toolbox:<br />
+    > &nbsp;&nbsp;&nbsp;&nbsp;build: .<br />
+    > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;environment:<br />
+    > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- DISPLAY=192.168.0.8:0
 
 ### Running
 
