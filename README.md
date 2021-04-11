@@ -37,4 +37,5 @@
 
 [Demo Video](https://pitt-my.sharepoint.com/:v:/g/personal/ziz36_pitt_edu/Ec-5Yyw-9XRKgK-fCBRAOXkBxDk81EYdbVmAyitwlqHAZA "Demo").
 
-***The backgroud color of my gui app is super dark in this demo video and it's probably something with Filmora***
+* ***Apache Hadoop is not implemented***
+* ***The backgroud color of my gui app is super dark in this demo video and it's probably something with Filmora***
