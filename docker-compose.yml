@@ -1,7 +1,7 @@
 version: '3'
 services:
     toolbox:
-        image: kaizzhang/dstoolbox
+        build: .
         environment:
             - DISPLAY=192.168.0.8:0
 
@@ -15,13 +15,13 @@ services:
         environment:
             - DISABLE_AUTH=true
 
-    spyder:
-        image: compdatasci/spyder-desktop
-        ports:
-            - 6080:6080
-            - 5900:5900
-        environment:
-            - VNC_PW=pass
+    # spyder:
+    #     image: compdatasci/spyder-desktop
+    #     ports:
+    #         - 6080:6080
+    #         - 5900:5900
+    #     environment:
+    #         - VNC_PW=pass
 
     jupyter:
         image: "jupyter/base-notebook"

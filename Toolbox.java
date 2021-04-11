@@ -29,16 +29,12 @@ public class Toolbox {
 
         spyderButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-
-                // Runtime rt = Runtime.getRuntime();
-                // String[] cmd = {"sh", "-c", 
-                //     "./spyder"};
-                // try {
-                //     rt.exec(cmd);
-                // } catch (Exception e) {
-                //     JOptionPane.showMessageDialog(null, e.getMessage());
-                // }  
-                openURL("http://host.docker.internal:6080/?password=pass");
+                try {
+                    Runtime rt = Runtime.getRuntime();
+                    Process pr = rt.exec("spyder3");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                }
             }
         });
 
